@@ -4,7 +4,7 @@ import hashlib
 from Helpers import clear_posters
 
 class PersonalShowsAgent(Agent.TV_Shows):
-    name = 'Personal Shows'
+    name = 'ttgrules Personal Shows'
     languages = [Locale.Language.NoLanguage]
     primary_provider = True
     persist_stored_files = False
