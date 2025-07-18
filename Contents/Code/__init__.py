@@ -68,7 +68,12 @@ class PersonalShowsAgent(Agent.TV_Shows):
     def update(self, metadata, media, lang):
         Log.Info('Updating Metadata')
         
-        main_path = media.seasons['1'].episodes['1'].items[0].parts[0].file
+        tempSeason=media.seasons[media.seasons.keys()[0]];
+        tempEpisodes=tempSeason.episodes[tempSeason.episodes.keys()[0]]
+        main_path = tempEpisodes.items[0].parts[0].file
+        filename = String.Unquote(main_path)
+        dir_name = os.path.normpath(os.path.join(filename, '../'))
+        show_name=os.path.basename(dir_name)
 
         show_path = os.path.normpath(os.path.join(main_path, '../'))
         meta_path = os.path.join(show_path, 'meta.json')
