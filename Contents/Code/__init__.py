@@ -85,6 +85,7 @@ class PersonalShowsAgent(Agent.TV_Shows):
         show_name = os.path.basename(show_path)
         metadata.title = show_name
 
+        meta_json = False
         if os.path.exists(meta_path):
             meta_json = json.loads(Core.storage.load(meta_path))
             Log.Info(meta_json)
