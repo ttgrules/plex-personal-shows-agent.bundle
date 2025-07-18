@@ -5,8 +5,11 @@ from Helpers import clear_posters
 
 class PersonalShowsAgent(Agent.TV_Shows):
     name = 'ttgrules Personal Shows'
-    languages = [Locale.Language.NoLanguage]
     primary_provider = True
+    fallback_agent = None
+    contributes_to = ['com.plexapp.agents.thetvdb']
+    accepts_from = ['com.plexapp.agents.localmedia']
+    languages = [Locale.Language.NoLanguage]
     persist_stored_files = False
 
     def search(self, results, media, lang):
